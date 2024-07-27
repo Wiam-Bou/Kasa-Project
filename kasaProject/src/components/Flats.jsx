@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 function Flats() {
   return (
-    <Link className='flatList' to= "/flat">
+    <Link className='flatList' to= "/AppartementsList">
     <div >
      <div className='flatTitle'> Titre de la location</div>
      

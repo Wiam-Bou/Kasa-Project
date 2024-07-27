@@ -1,0 +1,153 @@
+$appart-margin-left: 5rem;
+$appart-color: #FF6060;
+
+// Page principale
+.appart-page {
+  margin: auto;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0 1rem; // Ajoute du padding pour les petits écrans
+
+  img {
+    max-width: 100%;
+    height: 20rem;
+    object-fit: cover;
+    border-radius: 1rem;
+    display: block;
+  }
+}
+
+// Image de l'appartement
+.appart-pic {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+// Informations de l'appartement
+.appart-infos {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-left: $appart-margin-left;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0; // Réduit la marge pour les petits écrans
+  }
+}
+
+.appart-details {
+  flex: 1;
+}
+
+.appart-title {
+  color: $appart-color;
+  font-weight: 500;
+  margin-top: 1rem;
+  font-size: 36px;
+}
+
+.appart-subtitle {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.appart-tag {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap; // Permet aux tags de passer à la ligne si nécessaire
+
+  span {
+    background-color: #FF6060;
+    color: white;
+    border-radius: 0.7rem;
+    padding: 0.3em 1em;
+    flex: 1;
+    max-width: 120px;
+    text-align: center;
+  }
+}
+
+.appart-host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 5.4rem;
+
+  @media (max-width: 768px) {
+    margin-right: 0;
+    align-items: center; // Centre les éléments pour les petits écrans
+    flex-direction: row-reverse;
+    gap:4rem;
+  }
+
+  h3 {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.appart-rating {
+  span {
+    font-size: 1.5rem;
+  }
+}
+
+// Conteneur pour les dropdowns
+.dropdown-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; // Espacement entre les dropdowns
+  margin: 1rem 0; // Marge pour séparer les dropdowns
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between; // Assure l'alignement horizontal sur grands écrans
+  }
+}
+
+// Styles pour les dropdowns
+.appart-description,
+.appart-equipements {
+  flex: 1; // Assure que chaque dropdown prend la même largeur
+
+  .dropdown-toggle {
+    background-color: $appart-color;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 0.6em;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between; // Aligne le texte et l'icône
+    align-items: center;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 0.5rem;
+    text-align: left; // Assure que le texte est aligné à gauche
+
+    svg {
+      font-size: 24px; // Ajuste la taille du chevron
+    }
+  }
+
+  .description-content,
+  .equipments-content {
+    margin-top: 0.5rem;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    background-color: #f9f9f9;
+    max-width: 100%; // Assure que le contenu ne dépasse pas le conteneur
+    word-wrap: break-word; // Gère le débordement des mots
+  }
+
+  .equipments-content {
+    list-style-type: none; // Enlève les puces
+    padding-left: 0; // Enlève le padding par défaut des listes
+
+    li {
+      margin-bottom: 0.5em;
+    }
+  }
+}

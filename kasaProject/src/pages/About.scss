@@ -1,0 +1,70 @@
+$appart-color: #FF6060;
+$dropdown-bg: #f9f9f9;
+$dropdown-padding: 0.5em 1em;
+$dropdown-radius: 0.6em;
+
+// Page à propos
+.about-page {
+  padding: 1rem;
+
+
+ 
+ 
+  .dropdown-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; // Espacement entre les dropdowns
+
+    @media (min-width: 768px) {
+      gap: 2rem;
+    }
+  }
+
+  .dropdown {
+    flex: 1;
+    border-radius: $dropdown-radius;
+    background-color: $dropdown-bg;
+    width: 80%;
+    margin: 0 auto;
+
+    &.open {
+      .dropdown-content {
+        display: block;
+      }
+    }
+
+    .dropdown-toggle {
+      background-color: $appart-color;
+      color: white;
+      border: none;
+      padding: $dropdown-padding;
+      border-radius: $dropdown-radius;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+      width: 100%;
+      text-align: left;
+      font-size: 1rem;
+      text-transform: uppercase;
+
+      svg {
+        font-size: 24px; // Ajuste la taille du chevron
+      }
+    }
+
+    .dropdown-content {
+      display: none;
+      margin-top: 0.5rem;
+      padding: 0.5em;
+      background-color: #f9f9f9;
+      max-width: 100%;
+      word-wrap: break-word;
+
+      p {
+        margin: 0; // Enlève la marge du paragraphe
+      }
+    }
+  }
+}

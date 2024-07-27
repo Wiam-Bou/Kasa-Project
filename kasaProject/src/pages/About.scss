@@ -7,7 +7,19 @@ $dropdown-radius: 0.6em;
 .about-page {
   padding: 1rem;
 
+  .about-banner {
+    width: 100%;
+    display: flex;
+    justify-content: center; // Centre l'image horizontalement
+    align-items: center; // Centre l'image verticalement si nécessaire
+    overflow: hidden; // Assure que l'image ne déborde pas
 
+    img {
+      width: 100%;
+      height: auto; // Maintient le ratio d'aspect de l'image
+      object-fit: cover; // Assure que l'image couvre entièrement son conteneur
+    }
+  }
  
  
   .dropdown-container {
@@ -33,6 +45,13 @@ $dropdown-radius: 0.6em;
       }
     }
 
+    @media (max-width: 768px) {
+        .dropdown {
+          width: 95%; // Augmente la largeur des dropdowns sur les petits écrans
+          margin: 0 ;
+        }
+      }
+
     .dropdown-toggle {
       background-color: $appart-color;
       color: white;
@@ -43,11 +62,11 @@ $dropdown-radius: 0.6em;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-weight: bold;
+      font-weight: 700;
       width: 100%;
       text-align: left;
       font-size: 1rem;
-      text-transform: uppercase;
+
 
       svg {
         font-size: 24px; // Ajuste la taille du chevron

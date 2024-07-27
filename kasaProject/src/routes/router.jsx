@@ -6,7 +6,7 @@ import AppartementsList from "../pages/AppartementsList";
 import Navbar from "../components/Navbar";
 import Footer from "../Layouts/Footer";
 import Main from "../Layouts/Main";
-import ErrorPage from '../components/errorPage';
+import ErrorPage from '../pages/ErrorPage';
 import { Outlet } from "react-router-dom";
 
 const Layout = () => {
@@ -30,7 +30,6 @@ export const router = createBrowserRouter([
       { path: "/", element: <Home /> },
       { path: "/AppartementsList", element: <AppartementsList /> }, 
       { path: "/about", element: <About/> },
-      { path: "/contact", element: <h1>Contact</h1> },
       {path:"/*", element:<ErrorPage/>},
     ]
   },

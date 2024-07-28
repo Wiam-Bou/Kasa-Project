@@ -6,10 +6,7 @@ function Appartements(){
     return(
         <div className="appartement-list">
 <Flats/>
-<Flats/>
-<Flats/>
-<Flats/>
-        
+      
         </div>
     )
 }

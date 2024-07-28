@@ -1,86 +1,60 @@
-import React, { useState } from 'react';
-import { MdExpandMore, MdExpandLess } from 'react-icons/md';
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import logements from '../logements.json'; 
+import Dropdown from '../components/Dropdown'; // Importation du composant Dropdown
 import '../pages/AppartementsList.scss';
 
 function AppartementsList() {
-  const [isDescriptionOpen, setIsDescriptionOpen] = useState(false);
-  const [isEquipmentsOpen, setIsEquipmentsOpen] = useState(false);
+  const { id } = useParams(); // Récupère l'ID du logement à partir de l'URL
+  const logement = logements.find(logement => logement.id === id); // Trouve le logement correspondant
 
-  const toggleDescription = () => {
-    setIsDescriptionOpen((prevState) => !prevState);
-  };
-
-  const toggleEquipments = () => {
-    setIsEquipmentsOpen((prevState) => !prevState);
-  };
+  // Vérifie si le logement existe
+  if (!logement) {
+    return <div>Logement non trouvé</div>;
+  }
 
   return (
     <div className='appart-page'>
       <div className='appart-pic'>
-        <img src="./Background.png" alt="logement" />
+        <img src={logement.cover} alt={logement.title} />
       </div>
 
       <div className='appart-infos'>
         <div className='appart-details'>
-          <h1 className='appart-title'>Cosy Loft on the Canal Saint-Martin</h1>
-          <h2 className='appart-subtitle'>Paris, île-de-France</h2>
+          <h1 className='appart-title'>{logement.title}</h1>
+          <h2 className='appart-subtitle'>{logement.location}</h2>
           <div className='appart-tag'>
-            <span>Cosy</span>
-            <span>Canal</span>
-            <span>Paris 10</span>
+            {logement.tags.map((tag, index) => (
+              <span key={index}>{tag}</span>
+            ))}
           </div>
         </div>
 
         <div className='appart-host'>
-          <h3>Alexandre Dumas</h3>
+          <h3>{logement.host.name}</h3>
+          <img src={logement.host.picture} alt={logement.host.name} className='host-picture' />
           <div className='appart-rating'>
-            <span>☆</span>
-            <span>☆</span>
-            <span>☆</span>
-            <span>☆</span>
-            <span>☆</span>
+            {Array.from({ length: 5 }, (_, index) => (
+              <span key={index}>{index < logement.rating ? '★' : '☆'}</span>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Conteneur pour aligner les dropdowns */}
       <div className='dropdown-container'>
-        {/* Dropdown pour la description */}
-        <div className='appart-description'>
-          <button onClick={toggleDescription} className='dropdown-toggle'>
-            Description
-            {isDescriptionOpen ? <MdExpandLess /> : <MdExpandMore />}
-          </button>
-          {isDescriptionOpen && (
-            <p className='description-content'>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor a
-              praesentium reiciendis voluptas aperiam, debitis est accusamus. Harum
-              velit quaerat quibusdam quas quod placeat, sit, officia qui ut,
-              voluptas in distinctio nisi consequatur. Possimus ea, ipsum
-              consequuntur fuga quae veniam repellat facilis earum. Inventore quasi,
-              itaque nesciunt libero voluptatum beatae!
-            </p>
-          )}
-        </div>
+        <Dropdown title="Description">
+          <p className='description-content'>
+            {logement.description}
+          </p>
+        </Dropdown>
 
-        {/* Dropdown pour les équipements */}
-        <div className='appart-equipements'>
-          <button onClick={toggleEquipments} className='dropdown-toggle'>
-            Equipements
-            {isEquipmentsOpen ? <MdExpandLess /> : <MdExpandMore />}
-          </button>
-          {isEquipmentsOpen && (
-            <ul className='equipments-content'>
-              <li>Climatisation</li>
-              <li>Wi-Fi</li>
-              <li>Cuisine</li>
-              <li>Espace de travail</li>
-              <li>Fer à repasser</li>
-              <li>Sèche-cheveux</li>
-              <li>Cintres</li>
-            </ul>
-          )}
-        </div>
+        <Dropdown title="Équipements">
+          <ul className='equipments-content'>
+            {logement.equipments.map((equipment, index) => (
+              <li key={index}>{equipment}</li>
+            ))}
+          </ul>
+        </Dropdown>
       </div>
     </div>
   );

@@ -14,7 +14,7 @@ const Layout = () => {
     <>
       <Navbar />
       <Main>
-        {/* le contenu des routes enfants sera rendu ici  */}
+        {/* le contenu des routes enfants sera rendu ici */}
         <Outlet />  
       </Main>
       <Footer />
@@ -26,11 +26,12 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
+    errorElement: <ErrorPage />,
     children: [
       { path: "/", element: <Home /> },
-      { path: "/AppartementsList", element: <AppartementsList /> }, 
-      { path: "/about", element: <About/> },
-      {path:"/*", element:<ErrorPage/>},
+      { path: "/AppartementsList/:id", element: <AppartementsList /> }, 
+      { path: "/about", element: <About /> },
+      { path: "/*", element: <ErrorPage /> },
     ]
   },
 ]);

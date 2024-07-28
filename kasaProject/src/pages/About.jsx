@@ -1,15 +1,8 @@
 import React, { useState } from 'react';
-import { MdExpandMore, MdExpandLess } from 'react-icons/md';
+import Dropdown from '../components/Dropdown'; // Importation du composant Dropdown
 import './About.scss'; // Assurez-vous que le fichier SCSS est bien lié
 
-
 function About() {
-  const [openDropdown, setOpenDropdown] = useState(null);
-
-  const toggleDropdown = (dropdown) => {
-    setOpenDropdown(openDropdown === dropdown ? null : dropdown);
-  };
-
   // Texte des descriptions pour chaque dropdown
   const descriptions = {
     fiabilité: "Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes.",
@@ -26,20 +19,9 @@ function About() {
       
       <div className="dropdown-container">
         {Object.keys(descriptions).map((item) => (
-          <div key={item} className={`dropdown ${openDropdown === item ? 'open' : ''}`}>
-            <button
-              onClick={() => toggleDropdown(item)}
-              className="dropdown-toggle"
-            >
-              {item.charAt(0).toUpperCase() + item.slice(1)}
-              {openDropdown === item ? <MdExpandLess /> : <MdExpandMore />}
-            </button>
-            {openDropdown === item && (
-              <div className="dropdown-content">
-                <p>{descriptions[item]}</p>
-              </div>
-            )}
-          </div>
+          <Dropdown key={item} title={item.charAt(0).toUpperCase() + item.slice(1)}>
+            <p>{descriptions[item]}</p>
+          </Dropdown>
         ))}
       </div>
     </div>

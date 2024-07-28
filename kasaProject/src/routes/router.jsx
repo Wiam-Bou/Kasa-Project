@@ -26,14 +26,14 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
-    errorElement: <ErrorPage />,
+    // Le errorElement se déclenchera automatiquement pour les routes non définies
     children: [
       { path: "/", element: <Home /> },
       { path: "/AppartementsList/:id", element: <AppartementsList /> }, 
       { path: "/about", element: <About /> },
-      { path: "/*", element: <ErrorPage /> },
+      { path: "*", element: <ErrorPage /> }, // Gère explicitement toutes les erreurs
     ]
   },
 ]);
 
-export default router;
+export default router; 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Dropdown from '../components/Dropdown'; // Importation du composant Dropdown
-import './About.scss'; // Assurez-vous que le fichier SCSS est bien lié
+import Dropdown from '../components/Dropdown'; 
+import './About.scss'; 
 
 function About() {
   // Texte des descriptions pour chaque dropdown

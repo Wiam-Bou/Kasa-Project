@@ -1,18 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Slideshow.scss';
 
-// Le composant Carousel reçoit une liste de 'pictures' en tant que prop
-const Carousel = ({ pictures }) => {
+const Slideshow = ({ pictures }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Fonction pour aller à l'image précédente
   const handlePrevious = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? pictures.length - 1 : prevIndex - 1
     );
   };
 
-  // Fonction pour aller à l'image suivante
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === pictures.length - 1 ? 0 : prevIndex + 1
@@ -34,22 +31,4 @@ const Carousel = ({ pictures }) => {
   );
 };
 
-// Exemple d'utilisation du composant Carousel
-const App = () => {
-  const pictures = [
-    "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg",
-    "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-2.jpg",
-    "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-3.jpg",
-    "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-4.jpg",
-    "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-5.jpg",
-  ];
-
-  return (
-    <div className="app">
-      <h1>Carrousel d'Images</h1>
-      <Carousel pictures={pictures} />
-    </div>
-  );
-};
-
-export default App;
+export default Slideshow;

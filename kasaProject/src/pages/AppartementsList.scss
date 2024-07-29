@@ -57,7 +57,7 @@ $appart-color: #FF6060;
 .appart-tag {
   display: flex;
   gap: 1rem;
-  flex-wrap: wrap; // Permet aux tags de passer à la ligne si nécessaire
+  flex-wrap: wrap; 
 
   span {
     background-color: #FF6060;
@@ -72,7 +72,7 @@ $appart-color: #FF6060;
 
 .appart-host {
   display: flex;
-  align-items: center; /* Aligne la photo et le nom de l'hôte horizontalement */
+  align-items: center; 
   gap: 10px; /* Espace entre l'image et le nom */
   margin-right: 5.4rem;
 
@@ -88,8 +88,8 @@ $appart-color: #FF6060;
   }
 
   .host-picture {
-    width: 50px; /* Taille de l'image de l'hôte */
-    height: 50px; /* Taille de l'image de l'hôte */
+    width: 50px; 
+    height: 50px; 
     border-radius: 50%; /* Rend l'image circulaire */
     object-fit: cover; /* Assure que l'image est bien ajustée dans le cercle */
   }

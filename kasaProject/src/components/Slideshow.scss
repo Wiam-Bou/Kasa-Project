@@ -1,17 +1,19 @@
 .carousel {
-    position: relative;
-    max-width: 600px;
-    margin: 0 auto;
-    overflow: hidden;
-    text-align: center;
+  position: relative;
+  max-width: 100%; 
+  height: 500px; 
+  margin: auto;
+  overflow: hidden;
+
+  .carousel-image {
+    img {
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover; 
+      display: block;
+    }
   }
-  
-  .carousel-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
-  
+
   .carousel-button {
     position: absolute;
     top: 50%;
@@ -21,18 +23,14 @@
     border: none;
     padding: 10px;
     cursor: pointer;
-    font-size: 18px;
-    border-radius: 50%;
+    z-index: 1;
+
+    &.previous {
+      left: 10px;
+    }
+
+    &.next {
+      right: 10px;
+    }
   }
-  
-  .previous {
-    left: 10px;
-  }
-  
-  .next {
-    right: 10px;
-  }
-  
-  .carousel-button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
+}

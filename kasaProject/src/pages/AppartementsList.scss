@@ -47,11 +47,13 @@ $appart-color: #FF6060;
   font-weight: 500;
   margin-top: 1rem;
   font-size: 36px;
+  margin-bottom: 0;
 }
 
 .appart-subtitle {
   margin-top: 0;
   font-size: 18px;
+  font-weight: 500;
 }
 
 .appart-tag {
@@ -85,6 +87,7 @@ $appart-color: #FF6060;
 
   h3 {
     margin-bottom: 0.5rem;
+    color: $appart-color;
   }
 
   .host-picture {
@@ -104,6 +107,7 @@ $appart-color: #FF6060;
   span {
     font-size: 1.5rem;
     margin-right: 2px; /* Espacement entre les étoiles */
+    color: $appart-color;
   }
 }
 

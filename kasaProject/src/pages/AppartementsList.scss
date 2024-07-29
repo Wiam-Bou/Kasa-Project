@@ -40,6 +40,7 @@ $appart-color: #FF6060;
 
 .appart-details {
   flex: 1;
+  margin-left: -5rem;
 }
 
 .appart-title {
@@ -74,15 +75,21 @@ $appart-color: #FF6060;
 
 .appart-host {
   display: flex;
-  align-items: center; 
-  gap: 10px; /* Espace entre l'image et le nom */
-  margin-right: 5.4rem;
+  flex-direction: column; 
+  align-items: flex-start; 
+  gap: 10px; 
 
   @media (max-width: 768px) {
     margin-right: 0;
-    align-items: center; // Centre les éléments pour les petits écrans
-    flex-direction: row-reverse;
+    align-items: center; 
     gap: 4rem;
+  }
+
+  .host-info {
+    display: flex;
+   
+    align-items: center; 
+    gap: 1rem;
   }
 
   h3 {
@@ -91,23 +98,23 @@ $appart-color: #FF6060;
   }
 
   .host-picture {
-    width: 50px; 
-    height: 50px; 
-    border-radius: 50%; /* Rend l'image circulaire */
-    object-fit: cover; /* Assure que l'image est bien ajustée dans le cercle */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
   }
-}
 
-.appart-rating {
-  display: flex; /* Aligne les étoiles sur une ligne */
-  justify-content: flex-start; /* Aligne les étoiles au début de la ligne */
-  margin-top: 5px; /* Espace au-dessus des étoiles */
-  width: 100%; /* Assure que les étoiles prennent toute la largeur disponible */
-  
-  span {
-    font-size: 1.5rem;
-    margin-right: 2px; /* Espacement entre les étoiles */
-    color: $appart-color;
+  .appart-rating {
+    display: flex; // Aligne les étoiles sur une ligne
+    justify-content: center; // Centre les étoiles horizontalement
+    margin-top: 5px; // Espace au-dessus des étoiles
+    width: 100%; // Assure que les étoiles prennent toute la largeur disponible
+    
+    span {
+      font-size: 1.5rem;
+      margin-right: 2px; // Espacement entre les étoiles
+      color: $appart-color;
+    }
   }
 }
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Slideshow.scss';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'; // Importing arrow icons
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'; 
 
 const Slideshow = ({ pictures }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -17,7 +17,7 @@ const Slideshow = ({ pictures }) => {
     );
   };
 
-  // Return early if there's only one picture, and just show the image without controls
+  
   if (pictures.length === 1) {
     return (
       <div className="carousel">
@@ -34,10 +34,10 @@ const Slideshow = ({ pictures }) => {
         <img src={pictures[currentIndex]} alt={`Slide ${currentIndex + 1}`} />
       </div>
       <button className="carousel-button previous" onClick={handlePrevious}>
-        <FaArrowLeft /> {/* Previous arrow icon */}
+        <FaArrowLeft />
       </button>
       <button className="carousel-button next" onClick={handleNext}>
-        <FaArrowRight /> {/* Next arrow icon */}
+        <FaArrowRight /> 
       </button>
       <div className="slide-number">
         {currentIndex + 1} / {pictures.length}

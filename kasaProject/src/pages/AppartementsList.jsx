@@ -44,14 +44,16 @@ function AppartementsList() {
         </div>
 
         <div className="appart-host">
-          <h3>{logement.host.name}</h3>
-          <img src={logement.host.picture} alt={logement.host.name} className="host-picture" />
-          <div className="appart-rating">
-            {Array.from({ length: 5 }, (_, index) => (
-              <span key={index}>{index < logement.rating ? '★' : '☆'}</span>
-            ))}
-          </div>
-        </div>
+  <div className="host-info">
+    <h3>{logement.host.name}</h3>
+    <img src={logement.host.picture} alt={logement.host.name} className="host-picture" />
+  </div>
+  <div className="appart-rating">
+    {Array.from({ length: 5 }, (_, index) => (
+      <span key={index}>{index < logement.rating ? '★' : '☆'}</span>
+    ))}
+  </div>
+</div>
       </div>
 
       <div className="dropdown-container">

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Slideshow.scss';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'; 
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'; 
 
 const Slideshow = ({ pictures }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -17,7 +17,6 @@ const Slideshow = ({ pictures }) => {
     );
   };
 
-  
   if (pictures.length === 1) {
     return (
       <div className="carousel">
@@ -34,10 +33,10 @@ const Slideshow = ({ pictures }) => {
         <img src={pictures[currentIndex]} alt={`Slide ${currentIndex + 1}`} />
       </div>
       <button className="carousel-button previous" onClick={handlePrevious}>
-        <FaArrowLeft />
+        <FaChevronLeft />
       </button>
       <button className="carousel-button next" onClick={handleNext}>
-        <FaArrowRight /> 
+        <FaChevronRight />
       </button>
       <div className="slide-number">
         {currentIndex + 1} / {pictures.length}

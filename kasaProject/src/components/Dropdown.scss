@@ -5,22 +5,18 @@ $appart-color: #FF6060;
     border-radius: 0.5rem; // Arrondit les coins
   
     .dropdown-toggle {
-      background-color: $appart-color;
-      color: white;
-      border: none;
-      padding: 0.5em 1em;
-      border-radius: 0.6em;
-      cursor: pointer;
       display: flex;
-      justify-content: space-between; // Aligne le texte et l'icône
       align-items: center;
-      font-weight: bold;
-      width: 100%;
-      text-align: left; // Assure que le texte est aligné à gauche
-  
-      svg {
-        font-size: 24px; // Ajuste la taille du chevron
-      }
+      justify-content: space-between;
+      cursor: pointer;
+    }
+    
+    .icon {
+      transition: transform 0.3s ease;
+    }
+    
+    .rotated {
+      transform: rotate(180deg);
     }
   
     .dropdown-content {

@@ -1,25 +1,23 @@
 import React, { useState } from 'react';
-import { MdExpandMore, MdExpandLess } from 'react-icons/md';
+import { MdExpandMore } from 'react-icons/md';
 import './Dropdown.scss'; // Fichier CSS pour le composant Dropdown
 
 function Dropdown({ title, children }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
-    setIsOpen(prevState => !prevState);
+    setIsOpen((prevState) => !prevState);
   };
 
   return (
     <div className={`dropdown ${isOpen ? 'open' : ''}`}>
       <button onClick={toggleDropdown} className="dropdown-toggle">
         {title}
-        {isOpen ? <MdExpandLess /> : <MdExpandMore />}
+        <span className={`icon ${isOpen ? 'rotated' : ''}`}>
+          <MdExpandMore />
+        </span>
       </button>
-      {isOpen && (
-        <div className="dropdown-content">
-          {children}
-        </div>
-      )}
+      {isOpen && <div className="dropdown-content">{children}</div>}
     </div>
   );
 }

@@ -5,8 +5,8 @@ $dropdown-radius: 0.6em;
 
 // Page à propos
 .about-page {
-  overflow: hidden;
-  padding: 2rem;
+  // overflow: hidden;
+  // padding: 2rem;
 
   .about-banner {
    
@@ -15,7 +15,9 @@ $dropdown-radius: 0.6em;
       height: 13.938em; // Équivaut à 223px
       margin-top: 2.125em; // Équivaut à 50px
       object-fit: cover; // Assure que l'image couvre entièrement son conteneur
-      border-radius: 1.5em; // Équivaut à 24px
+      border-radius: 0.9rem; // Équivaut à 24px
+      margin-right: 1rem;
+      padding-right: 1rem;
    
 
     

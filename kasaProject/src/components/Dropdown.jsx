@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { MdExpandMore } from 'react-icons/md';
-import './Dropdown.scss'; // Fichier CSS pour le composant Dropdown
+import './Dropdown.scss'; 
 
 function Dropdown({ title, children }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +17,9 @@ function Dropdown({ title, children }) {
           <MdExpandMore />
         </span>
       </button>
-      {isOpen && <div className="dropdown-content">{children}</div>}
+      <div className={`dropdown-content ${isOpen ? 'open' : 'closed'}`}>
+        {children}
+      </div>
     </div>
   );
 }

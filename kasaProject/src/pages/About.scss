@@ -17,7 +17,7 @@ $dropdown-radius: 0.6em;
       object-fit: cover; // Assure que l'image couvre entièrement son conteneur
       border-radius: 0.9rem; // Équivaut à 24px
       margin-right: 1rem;
-      padding-right: 1rem;
+     
    
 
     
@@ -48,15 +48,15 @@ $dropdown-radius: 0.6em;
       width: 100%;
       margin-top: 2em;
 
-      .dropdown-toggle {
-        margin-bottom: 1.8em;
-      }
+      // .dropdown-toggle {
+      //   margin-bottom: 1.8em;
+      // }
     }
 
     .dropdown {
       flex: 1;
       border-radius: $dropdown-radius;
-      background-color: $dropdown-bg;
+     
       width: 100%;
       border-radius: 0.25em; // Arrondi des coins
 
@@ -68,7 +68,6 @@ $dropdown-radius: 0.6em;
 
       .dropdown-toggle {
         background-color: $appart-color;
-        color: white;
         border: none;
         padding: $dropdown-padding;
         border-radius: $dropdown-radius;
@@ -88,7 +87,6 @@ $dropdown-radius: 0.6em;
 
       .dropdown-content {
         display: none;
-        margin-top: 0.5rem;
         padding: 0.5em;
         background-color: #f9f9f9;
         max-width: 100%;

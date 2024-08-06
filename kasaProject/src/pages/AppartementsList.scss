@@ -1,12 +1,11 @@
 $appart-margin-left: 5rem;
 $appart-color: #FF6060;
 
-// Page principale
 .appart-page {
   margin: auto;
   max-width: 100%;
   overflow: hidden;
-  padding: 0 1rem; // Ajoute du padding pour les petits écrans
+  padding: 0 1rem;
 
   img {
     max-width: 100%;
@@ -17,14 +16,11 @@ $appart-color: #FF6060;
   }
 }
 
-// Image de l'appartement
 .appart-pic {
   max-width: 100%;
-  // display: flex;
   justify-content: center;
 }
 
-// Informations de l'appartement
 .appart-infos {
   display: flex;
   justify-content: space-between;
@@ -34,7 +30,7 @@ $appart-color: #FF6060;
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
-    margin-left: 0; // Réduit la marge pour les petits écrans
+    margin-left: 0;
   }
 }
 
@@ -87,7 +83,6 @@ $appart-color: #FF6060;
 
   .host-info {
     display: flex;
-   
     align-items: center; 
     gap: 1rem;
   }
@@ -105,57 +100,34 @@ $appart-color: #FF6060;
   }
 
   .appart-rating {
-    display: flex; // Aligne les étoiles sur une ligne
-    justify-content: center; // Centre les étoiles horizontalement
-    margin-top: 5px; // Espace au-dessus des étoiles
-    width: 100%; // Assure que les étoiles prennent toute la largeur disponible
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    width: 100%;
     
     span {
       font-size: 1.5rem;
-      margin-right: 2px; // Espacement entre les étoiles
+      margin-right: 2px;
       color: $appart-color;
     }
   }
 }
 
-// Conteneur pour les dropdowns
 .dropdown-container {
   display: flex;
   flex-direction: column;
-  gap: 1rem; // Espacement entre les dropdowns
-  margin: 1rem 0; // Marge pour séparer les dropdowns
+  gap: 1rem;
+  margin: 1rem 0;
 
   @media (min-width: 768px) {
     flex-direction: row;
-    justify-content: space-between; // Assure l'alignement horizontal sur grands écrans
+    justify-content: space-between;
   }
 }
 
-// Styles pour les dropdowns
 .appart-description,
 .appart-equipements {
-  flex: 1; // Assure que chaque dropdown prend la même largeur
-
-  .dropdown-toggle {
-    background-color: $appart-color;
-    color: white;
-    border: none;
-    padding: 0.5em 1em;
-    border-radius: 0.6em;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between; // Aligne le texte et l'icône
-    align-items: center;
-    font-weight: bold;
-    width: 100%;
-    margin-top: 0.5rem;
-    text-align: left; // Assure que le texte est aligné à gauche
-   
-
-    svg {
-      font-size: 24px; // Ajuste la taille du chevron
-    }
-  }
+  flex: 1;
 
   .description-content,
   .equipments-content {
@@ -163,16 +135,20 @@ $appart-color: #FF6060;
     padding: 0.5em;
     border-radius: 0.5em;
     background-color: #f9f9f9;
-    max-width: 100%; // Assure que le contenu ne dépasse pas le conteneur
-    word-wrap: break-word; // Gère le débordement des mots
+    max-width: 100%;
+    word-wrap: break-word;
   }
 
   .equipments-content {
-    list-style-type: none; // Enlève les puces
-    padding-left: 0; // Enlève le padding par défaut des listes
+    list-style-type: none;
+    padding-left: 0;
 
+   ul{
+    list-style-type: none;
+   } 
     li {
       margin-bottom: 0.5em;
+     
     }
   }
 }

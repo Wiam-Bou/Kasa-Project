@@ -71,7 +71,9 @@
 
   @media (max-width: 768px) {
     align-items: center;
-    gap: 1rem;
+    gap: 3rem;
+    flex-direction: row-reverse;
+    margin-right: 4rem;
   }
 
   .host-info {
@@ -108,11 +110,10 @@
 
 .dropdown-container {
   display: flex;
-  flex-direction: column; // Verticale par défaut
   gap: 1rem;
 
   @media (min-width: 768px) {
-    flex-direction: row;  // Horizontal à partir de 768px
+    flex-direction: row;  
     justify-content: space-between;
   }
 

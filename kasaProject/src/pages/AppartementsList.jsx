@@ -1,17 +1,25 @@
-import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import logements from '../logements.json';
-import '../pages/AppartementsList.scss';
 import Slideshow from '../components/Slideshow';
-import Dropdown from '../components/Dropdown'; 
+import Dropdown from '../components/Dropdown';
+import '../pages/AppartementsList.scss';
 
 function AppartementsList() {
-  const { id } = useParams(); 
-  const logement = logements.find((logement) => logement.id === id); // trouver l'appart correspondant
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const logement = logements.find((logement) => logement.id === id);
 
-  // Checker si l'appart existe 
+  useEffect(() => {
+    // Redirection en cas d'appartement non trouvé
+    if (!logement) {
+      navigate('/404', { replace: true });
+    }
+  }, [logement, navigate]);
+
+  // Ne pas rendre le contenu si l'appartement est introuvable
   if (!logement) {
-    return <div>{<ErrorPage/>}</div>;
+    return null;
   }
 
   return (

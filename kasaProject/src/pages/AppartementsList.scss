@@ -111,6 +111,7 @@
 .dropdown-container {
   display: flex;
   gap: 1rem;
+  flex-direction: column;
 
   @media (min-width: 768px) {
     flex-direction: row;  

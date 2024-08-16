@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './Slideshow.scss';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'; 
-import Dropdown from '../components/Dropdown';
 
 const Slideshow = ({ pictures }) => {
   const [currentIndex, setCurrentIndex] = useState(0);

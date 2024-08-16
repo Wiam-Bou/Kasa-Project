@@ -1,6 +1,3 @@
-$appart-margin-left: 5rem;
-$appart-color: #FF6060;
-
 .appart-page {
   margin: auto;
   max-width: 100%;
@@ -14,37 +11,34 @@ $appart-color: #FF6060;
     border-radius: 1rem;
     display: block;
   }
-}
 
-.appart-pic {
-  max-width: 100%;
-  justify-content: center;
+  @media (max-width: 768px) {
+    padding: 0;
+  }
 }
 
 .appart-infos {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-left: $appart-margin-left;
 
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
-    margin-left: 0;
   }
 }
 
-.appart-details {
+.appart-details,
+.appart-description,
+.appart-equipements {
   flex: 1;
-  margin-left: -5rem;
 }
 
 .appart-title {
-  color: $appart-color;
+  color: #FF6060;
   font-weight: 500;
   margin-top: 1rem;
   font-size: 36px;
-  margin-bottom: 0;
 }
 
 .appart-subtitle {
@@ -56,7 +50,7 @@ $appart-color: #FF6060;
 .appart-tag {
   display: flex;
   gap: 1rem;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
 
   span {
     background-color: #FF6060;
@@ -71,25 +65,24 @@ $appart-color: #FF6060;
 
 .appart-host {
   display: flex;
-  flex-direction: column; 
-  align-items: flex-start; 
-  gap: 10px; 
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
 
   @media (max-width: 768px) {
-    margin-right: 0;
-    align-items: center; 
-    gap: 4rem;
+    align-items: center;
+    gap: 1rem;
   }
 
   .host-info {
     display: flex;
-    align-items: center; 
+    align-items: center;
     gap: 1rem;
   }
 
   h3 {
     margin-bottom: 0.5rem;
-    color: $appart-color;
+    color: #FF6060;
   }
 
   .host-picture {
@@ -102,53 +95,48 @@ $appart-color: #FF6060;
   .appart-rating {
     display: flex;
     justify-content: center;
-    margin-top: 5px;
     width: 100%;
-    
+    margin-top: 5px;
+
     span {
       font-size: 1.5rem;
       margin-right: 2px;
-      color: $appart-color;
+      color: #FF6060;
     }
   }
 }
 
 .dropdown-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; // Verticale par défaut
   gap: 1rem;
-  margin: 1rem 0;
 
   @media (min-width: 768px) {
-    flex-direction: row;
+    flex-direction: row;  // Horizontal à partir de 768px
     justify-content: space-between;
+  }
+
+  .dropdown {
+    flex: 1;
+    min-width: 50%;
   }
 }
 
-.appart-description,
-.appart-equipements {
-  flex: 1;
+.description-content,
+.equipments-content {
+  margin-top: 0.5rem;
+  padding: 0.5em;
+  border-radius: 0.5rem;
+  background-color: #f9f9f9;
+  max-width: 100%;
+  word-wrap: break-word;
+}
 
-  .description-content,
-  .equipments-content {
-    margin-top: 0.5rem;
-    padding: 0.5em;
-    border-radius: 0.5em;
-    background-color: #f9f9f9;
-    max-width: 100%;
-    word-wrap: break-word;
-  }
+.equipments-content ul {
+  list-style-type: none;
+  padding-left: 0;
+}
 
-  .equipments-content {
-    list-style-type: none;
-    padding-left: 0;
-
-   ul{
-    list-style-type: none;
-   } 
-    li {
-      margin-bottom: 0.5em;
-     
-    }
-  }
+.equipments-content li {
+  margin-bottom: 0.5em;
 }

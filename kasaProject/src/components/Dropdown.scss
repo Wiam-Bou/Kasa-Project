@@ -1,66 +1,54 @@
-$appart-color: #FF6060;
-
 .dropdown {
   border-radius: 0.5rem;
-  width: 580px;
+  width: 100%;
+  margin: 0.5rem 0;
 
   .dropdown-toggle {
     display: flex;
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
-    background-color: $appart-color;
+    background-color: #FF6060;
     color: white;
     border: none;
     padding: 0.5em 1em;
-    border-radius: 0.6em;
+    border-radius: 0.5rem;
     font-weight: bold;
-    width: 100%;
-    margin-top: 0.5rem;
     text-align: left;
+    width: 100%;
 
     svg {
       font-size: 24px;
     }
-  }
 
-  .icon {
     transition: transform 0.3s ease;
   }
 
-  .rotated {
+  .icon.rotated {
     transform: rotate(180deg);
   }
 
   .dropdown-content {
     overflow: hidden;
-    max-height: 0; /* Utiliser max-height pour la transition de hauteur */
-    opacity: 0; /* Initialement invisible */
-    transform: scaleY(0); /* Échelle verticale réduite */
-    transform-origin: top; /* L'origine de la transformation est en haut */
-    transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.5s ease; /* Ajout des transitions */
-
-    padding: 0 0.5em; /* Padding horizontal */
+    max-height: 0;
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
+    padding: 0 0.5em;
     background-color: #f9f9f9;
-    border-radius: 0 0 0.5em 0.5em;
+    border-radius: 0 0 0.5rem 0.5rem;
 
     ul {
       list-style-type: none;
+      margin: 0;
+      padding: 0;
     }
   }
 
-  /* Quand le dropdown est ouvert */
-  .open {
-    max-height: 500px; 
-    opacity: 1; /* Pleinement visible */
-    transform: scaleY(1); /* Échelle verticale normale */
-    padding: 0.5em; /* Padding complet */
-  }
-
-  /* Quand le dropdown est fermé */
-  .closed {
-    max-height: 0; /* Hauteur minimale pour transition */
-    opacity: 0; /* Invisible */
-    transform: scaleY(0); /* Échelle verticale réduite */
+  &.open .dropdown-content {
+    max-height: 500px;
+    opacity: 1;
+    transform: scaleY(1);
   }
 }

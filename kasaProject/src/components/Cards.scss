@@ -25,11 +25,11 @@
 .flat {
   width: 21.25rem;
   height: 21.25rem;
-  position: relative;
+  position: relative; /* Permet de positionner des éléments enfants absolument par rapport à cet élément */
   border-radius: 8px;
-  overflow: hidden;
+  overflow: hidden; /* Cache le contenu qui dépasse les limites de l'élément */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out; /* Transition douce pour l'effet de survol */
 
   img {
     width: 100%;
@@ -39,7 +39,7 @@
 
   .flatTitle {
     position: absolute;
-    bottom: 10px;
+    bottom: 10px; /* Positionne le titre à 10px du bas de l'élément parent */
     left: 10px;
     color: white;
     font-size: 18px;
@@ -49,7 +49,7 @@
   }
 
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px);  /* Déplace légèrement l'élément vers le haut pour un effet de survol */
   }
 }
 

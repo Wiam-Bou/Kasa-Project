@@ -10,7 +10,7 @@
   
   .error-banner {
     display: flex;
-    justify-content: center; // Center image within its container
+    justify-content: center; 
     width: 100%;
     max-width: 400px;
     margin-bottom: 1rem;
@@ -18,7 +18,7 @@
     img {
       width: 100%;
       height: auto;
-      display: block; // Ensures the image is treated as a block element
+      display: block; 
     }
   }
   

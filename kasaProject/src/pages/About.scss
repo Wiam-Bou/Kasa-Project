@@ -69,13 +69,13 @@ $dropdown-radius: 0.6em;
       overflow: hidden;
       max-height: 0;
       opacity: 0;
-      transform: scaleY(0);
+      transform: scaleY(0); // Réduit l'échelle verticale pour masquer le contenu
       transform-origin: top;
       transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
       padding: 0 0.5em;
       background-color: $dropdown-bg;
       border-radius: 0 0 0.5em 0.5em;
-      word-wrap: break-word;
+      word-wrap: break-word; // Casse les mots pour éviter les débordements
 
       &.open {
         max-height: 500px;

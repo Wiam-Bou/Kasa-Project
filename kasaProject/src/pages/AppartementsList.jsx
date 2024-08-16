@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import logements from '../logements.json';
 import '../pages/AppartementsList.scss';
 import Slideshow from '../components/Slideshow';
-import Dropdown from '../components/Dropdown'; // Assurez-vous que le chemin est correct
+import Dropdown from '../components/Dropdown'; 
 
 function AppartementsList() {
   const { id } = useParams(); 

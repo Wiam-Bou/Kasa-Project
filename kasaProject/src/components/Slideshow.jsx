@@ -13,7 +13,7 @@ const Slideshow = ({ pictures }) => {
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === pictures.length - 1 ? 0 : prevIndex + 1
+      prevIndex === pictures.length - 1 ? 0 : prevIndex + 1   
     );
   };
 
@@ -30,16 +30,19 @@ const Slideshow = ({ pictures }) => {
   return (
     <div className="carousel">
       <div className="carousel-image">
-        <img src={pictures[currentIndex]} alt={`Slide ${currentIndex + 1}`} />
+       
+        <img src={pictures[currentIndex]} alt={`Slide ${currentIndex + 1}`} />  {/* affichage de l'image actuelle  */}
       </div>
-      <button className="carousel-button previous" onClick={handlePrevious}>
+     
+      <button className="carousel-button previous" onClick={handlePrevious}>  {/* appeler la fonction pour img précédente */}
         <FaChevronLeft />
       </button>
-      <button className="carousel-button next" onClick={handleNext}>
+      <button className="carousel-button next" onClick={handleNext}>  {/* appeler la fonction pour img suivante */}
         <FaChevronRight />
       </button>
       <div className="slide-number">
-        {currentIndex + 1} / {pictures.length}
+        
+        {currentIndex + 1} / {pictures.length} {/* afficher l'img actuelle sur le nombre totale des imgs  */}
       </div>
     </div>
   );

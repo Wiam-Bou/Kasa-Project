@@ -6,14 +6,14 @@ import Dropdown from '../components/Dropdown';
 import '../pages/AppartementsList.scss';
 
 function AppartementsList() {
-  const { id } = useParams();
-  const navigate = useNavigate();
+  const { id } = useParams(); 
+  const navigate = useNavigate(); // utilisé pour rediriger vers une autre page 
   const logement = logements.find((logement) => logement.id === id);
 
   useEffect(() => {
     // Redirection en cas d'appartement non trouvé
     if (!logement) {
-      navigate('/404', { replace: true });
+      navigate('/404', { replace: true });  //suppr la page act de l'historique,la remplace par la nouvelle (ici, /404).
     }
   }, [logement, navigate]);
 

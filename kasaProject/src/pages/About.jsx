@@ -17,8 +17,10 @@ function About() {
        <img src="/Paysage.png" alt="paysage" />
       </div>
       
-      <div className="dropdown-container">
-        {Object.keys(descriptions).map((item) => (
+      <div className="dropdown-container"> {/* conteneur pour ts les composants dropdown */}
+        
+        {/* récupère tous les cles de l'objet description sous un tableau */}
+        {Object.keys(descriptions).map((item) => (  
           <Dropdown key={item} title={item.charAt(0).toUpperCase() + item.slice(1)}>
             <p>{descriptions[item]}</p>
           </Dropdown>

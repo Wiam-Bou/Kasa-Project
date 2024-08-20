@@ -14,7 +14,7 @@ const Navbar = () => {
      <NavLink
         to="/"
         end
-        className={({ isActive }) => (isActive ? "active" : "")}
+        className={({ isActive }) => (isActive ? "active" : "")} // pour afficher la page sur laquelle on se trouve
       >
         Accueil
       </NavLink>

@@ -1,0 +1,64 @@
+
+.navbar {
+  display: flex;
+  align-items: center;
+justify-content: space-between;
+  font-weight: 700;
+  margin-top: 1.25rem;
+  gap: 0.8rem;
+
+
+  .nav-logo {
+    margin-right: auto;
+  margin-left: 4.7rem;
+
+    img {
+      height: 60px;
+    width: 180px;
+      
+    }
+
+    @media (max-width: 768px) {
+    margin-left: 1rem;
+    padding: 0;
+   
+
+    img{
+      height:46px;
+      width: 145px;
+    }
+    }
+  }
+
+  .nav-elements{
+    display: flex;
+    margin-right: 4rem;
+    gap: 2rem;
+  
+    @media (max-width: 768px) {
+     
+      gap: 0.7rem;
+      padding: 0;
+      margin-right: 0.3rem;
+     
+      }
+  }
+
+
+
+
+  a {
+    color: #000000;
+    text-decoration: none;
+
+    &.active,
+    &.isActive {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      text-transform: uppercase;
+    }
+   
+  }
+}
